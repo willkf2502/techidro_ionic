@@ -1,0 +1,39 @@
+<ion-app >
+  <ion-split-pane>
+    
+    <ion-menu side="start" >
+      <ion-header > 
+        <ion-toolbar color="primary">
+            <ion-title><ion-icon name="albums"></ion-icon> Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+
+            <!-- OUTROS-->
+            <ion-item *ngIf="p.title!='Sair'" [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon style="color:#114c9e"  slot="start" [name]="p.icon"></ion-icon>
+              <ion-label >
+                <span  style="color:#114c9e"> {{p.title}} </span>
+                </ion-label>
+             </ion-item>
+
+             <ion-item *ngIf="p.title=='Sair'" [routerDirection]="'root'" [routerLink]="[p.url]">
+                <ion-icon style="color:darkred"  slot="start" [name]="p.icon"></ion-icon>
+                <ion-label >
+                  <span  style="color:darkred"> {{p.title}} </span>
+                  </ion-label>
+               </ion-item>
+
+
+
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet main></ion-router-outlet>
+
+  </ion-split-pane>
+</ion-app>

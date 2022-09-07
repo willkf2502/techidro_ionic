@@ -1,0 +1,20 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "scpa2022.jks",
+            "storePassword": "inffoc@scpa!@",
+            "alias": "scpa2022",
+            "password" : "inffoc@scpa!@",
+            "keystoreType": "",
+            "packageType": "bundle"
+        },
+        "release": {
+            "keystore": "scpa2022.jks",
+            "storePassword": "inffoc@scpa!@",
+            "alias": "scpa2022",
+            "password" : "inffoc@scpa!@",
+            "keystoreType": "",
+            "packageType": "bundle"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons side="start" class="techidro_barra">
+      <ion-menu-button></ion-menu-button>
+      <ion-title >Laudos</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center" class="ion-padding background-image">    
+    
+  <ion-refresher slot="fixed" 
+
+  class="ion-padding refresher"
+
+  (ionRefresh)="UpdateDados($event)"  > 
+    <ion-refresher-content   class="ion-padding"
+    pullingIcon="arrow-dropdown" 
+    pullingText="Puxe para atualizar"
+    refreshingSpinner="circles">        
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <input
+  type="text"
+  style="padding:6px;margin:5px auto;width:98%;"
+  placeholder="Pesquisar laudo..."
+  (keyup)='filterDatatable($event)'
+/>
+  <ngx-datatable #table style="width: 100%"
+        class="material striped"
+        [rows]="data"
+        [columns]="cols"
+        [columnMode]="'force'"
+        [reorderable]="false"
+        [sortType]="'multi'"
+        [scrollbarV]="true"
+        [limit]="5"
+        [headerHeight]="40"
+        [footerHeight]="40"
+        [rowHeight]="40" 
+        (activate)="onActivate($event)"
+        [messages]="{emptyMessage: 'Nenhum registro encontrado.'}">     
+      </ngx-datatable>
+</ion-content>
